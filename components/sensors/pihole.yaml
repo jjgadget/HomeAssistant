@@ -1,0 +1,10 @@
+platform: pi_hole
+host: 192.168.1.2
+monitored_conditions:
+  - ads_blocked_today
+  - ads_percentage_today
+  - dns_queries_today
+  - domains_being_blocked
+  - queries_cached
+  - queries_forwarded
+  

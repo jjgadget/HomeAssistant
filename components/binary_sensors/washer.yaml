@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Washer"
+device_class: vibration
+state_topic: "laundry/binary_sensor/washer/state"
+availability_topic: "laundry/status"

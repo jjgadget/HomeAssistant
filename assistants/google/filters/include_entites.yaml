@@ -1,0 +1,17 @@
+include_entities:
+  - switch.back_porch_light
+  - switch.back_porch_outlet
+  - switch.kitchen_light
+  - switch.kitchen_outlet
+  - switch.fireplace
+  - switch.front_porch_light
+  - switch.office_outlet
+  - switch.guest_mode
+  - switch.master_bath_fan
+  - light.living_room
+  - light.master_bath_light
+  - light.bedroom_lights
+  - light.master_bedroom_lamp
+  - light.xiaomi_hub
+  - script.1527265289249
+  - script.1536126931165

@@ -1,0 +1,10 @@
+harmony_remote:
+  name: Harmony Remote
+  options:
+  - Select Option
+  - Kodi
+  - Chromecast
+  - Nintendo Switch
+  - Turn Off
+  initial: Select Option
+  icon: mdi:remote

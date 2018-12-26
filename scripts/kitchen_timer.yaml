@@ -1,0 +1,8 @@
+'kitchen_timer':
+  alias: Timer
+  sequence:
+  - delay: '{{ states.input_number.hours.state | int }}:{{ states.input_number.minutes.state       |
+      int }}:00'
+  - data:
+      entity_id: switch.kitchen_outlet
+    service: switch.turn_off

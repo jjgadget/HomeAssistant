@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  master_bath_motion:
+    friendly_name: 'Motion'
+    device_class: motion
+    value_template: "{{ states.sensor.master_bath_fan_burglar.state == '8' }}"

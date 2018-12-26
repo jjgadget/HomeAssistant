@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d0001ae9f92"
+name: "Kitchen Motion Sensor"
+unit_of_measurement: "%"
+device_class: battery

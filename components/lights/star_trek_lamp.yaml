@@ -1,0 +1,21 @@
+platform: mqtt
+name: "Star Trek Lamp"
+state_topic: "stat/StarTrek1/POWER"
+command_topic: "cmnd/StarTrek1/POWER"
+availability_topic: "tele/StarTrek1/LWT"
+brightness_state_topic: "stat/StarTrek1/Dimmer"
+brightness_command_topic: "cmnd/StarTrek1/Dimmer"
+rgb_state_topic: "stat/StarTrek1/Color"
+rgb_command_topic: "cmnd/StarTrek1/Color"
+# state_value_template: "{{ value_json.state }}"
+brightness_value_template: "{{ value_json.Dimmer }}"
+rgb_value_template: "{{ value_json.Color | join(',') }}"
+qos: 0
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+optimistic: false
+brightness: true
+brightness_scale: 100
+rgb: true

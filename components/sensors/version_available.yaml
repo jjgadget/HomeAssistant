@@ -1,0 +1,5 @@
+platform: version
+name: Latest Version
+source: docker
+branch: stable
+image: default

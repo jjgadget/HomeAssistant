@@ -1,0 +1,26 @@
+platform: 'bayesian'
+name: 'Joe'
+device_class: presence
+prior: 0.1
+probability_threshold: 0.3
+observations:
+  - entity_id: 'device_tracker.pixeljoe_bt'
+    prob_given_true: 0.5
+    prob_given_false: 0.1
+    platform: 'state'
+    to_state: 'home'
+  - entity_id: 'device_tracker.pixeljoe_wifi'
+    prob_given_true: 0.5
+    prob_given_false: 0.1
+    platform: 'state'
+    to_state: 'home'
+  - entity_id: 'binary_sensor.chevy_spark_ev'
+    prob_given_true: 0.5
+    prob_given_false: 0.1
+    platform: 'state'
+    to_state: 'on'
+  - entity_id: 'device_tracker.joe_cell'
+    prob_given_true: 0.5
+    prob_given_false: 0.1
+    platform: 'state'
+    to_state: 'home'

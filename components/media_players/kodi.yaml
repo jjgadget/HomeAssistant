@@ -1,0 +1,5 @@
+platform: kodi
+host: 192.168.1.20
+port: 3366
+username: !secret kodi_username
+password: !secret kodi_password

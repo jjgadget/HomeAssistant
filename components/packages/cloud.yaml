@@ -1,0 +1,4 @@
+cloud:
+  google_actions:
+    filter: !include_dir_merge_named ../../assistants/google/filters
+    entity_config: !include_dir_merge_named ../../assistants/google/entities

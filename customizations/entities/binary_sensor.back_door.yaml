@@ -1,0 +1,2 @@
+binary_sensor.back_door:
+  device_class: door

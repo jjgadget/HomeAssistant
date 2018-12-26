@@ -1,0 +1,4 @@
+switch.back_porch_outlet:
+  name: String Lights
+  aliases:
+    - Deck Lights

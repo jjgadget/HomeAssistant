@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d00020b5343"
+name: "Coop Door"
+unit_of_measurement: "%"
+device_class: battery

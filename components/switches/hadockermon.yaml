@@ -1,0 +1,14 @@
+platform: hadockermon
+host: 192.168.1.4
+port: 8126
+containers:
+  - amazon-dash
+  - docker-compose-ui
+  - mqtt
+  - node-red
+  - ouroboros
+  - portainer
+  - radarr
+  - sickgear
+  - tasmoadmin
+  - transmission

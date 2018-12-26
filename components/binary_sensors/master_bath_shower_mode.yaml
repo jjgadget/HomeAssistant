@@ -1,0 +1,8 @@
+platform: trend
+sensors:
+  shower:
+    entity_id: sensor.master_bath_humidity
+    friendly_name: Shower Mode
+    sample_duration: 300
+    min_gradient: 0.0030
+    device_class: moisture

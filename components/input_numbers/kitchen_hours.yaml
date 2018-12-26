@@ -1,0 +1,6 @@
+hours:
+  name: Hours
+  initial: 9
+  min: 0
+  max: 12
+  step: 1

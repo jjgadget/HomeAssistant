@@ -1,0 +1,5 @@
+platform: group
+name: Bedroom Lights
+entities:
+  - light.guest_bedroom_1
+  - light.guest_bedroom_2

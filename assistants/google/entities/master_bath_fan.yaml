@@ -1,0 +1,5 @@
+switch.master_bath_fan_switch:
+  name: Bathroom Fan
+  aliases:
+    - Master Bath Fan
+    - master bathroom fan

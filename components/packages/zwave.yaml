@@ -1,0 +1,10 @@
+zwave:
+  device_config:
+    light.master_bath_light:
+      polling_intensity: 1
+      refresh_value: true
+      delay: 3
+    light.bath_light:
+      polling_intensity: 1
+      refresh_value: true
+      delay: 3

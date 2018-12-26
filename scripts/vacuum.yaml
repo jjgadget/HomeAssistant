@@ -1,0 +1,6 @@
+'vacuum':
+  alias: The Vacuum
+  sequence:
+  - data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+    service: vacuum.start

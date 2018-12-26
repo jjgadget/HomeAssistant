@@ -1,3 +1,4 @@
+.DS_Store
 .google.token
 .HA_VERSION
 .uuid
@@ -5,6 +6,8 @@
 .storage/
 .cloud/
 .automatic/
+deps/
+tts/
 
 secrets.yaml
 google_calendars.yaml

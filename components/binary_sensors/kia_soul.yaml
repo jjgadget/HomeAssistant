@@ -1,0 +1,3 @@
+platform: mqtt
+name: "Kia Soul"
+state_topic: "homeassistant/binary_sensor/CarPresenceJoe/state"

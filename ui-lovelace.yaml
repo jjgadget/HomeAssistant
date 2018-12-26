@@ -1,0 +1,17 @@
+name: Home Assistant
+
+views:
+
+  - id: 0
+    name: Downstairs
+    icon: mdi:sofa
+    cards:
+      - type: entities
+        id: Laundry Room
+        title: Laundry Room
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.laundry_status
+          - entity: binary_sensor.washer
+          - entity: binary_sensor.dryer
+        theme: default

@@ -1,0 +1,3 @@
+platform: uptime
+name: System Uptime
+unit_of_measurement: days

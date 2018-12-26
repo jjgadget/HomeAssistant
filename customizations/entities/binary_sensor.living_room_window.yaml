@@ -1,0 +1,2 @@
+binary_sensor.living_room_window:
+  device_class: window

@@ -1,0 +1,6 @@
+light.master_bath_light:
+  ignored: false
+  polling_intensity: 1
+light.bath_light:
+  ignored: false
+  polling_intensity: 1

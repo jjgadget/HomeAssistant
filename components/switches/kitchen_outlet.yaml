@@ -1,0 +1,11 @@
+platform: mqtt
+name: "Kitchen Outlet"
+icon: mdi:power-socket-us
+command_topic: "cmnd/Kitchen_S20/power"
+state_topic: "stat/Kitchen_S20/POWER"
+availability_topic: "tele/Kitchen_S20/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"

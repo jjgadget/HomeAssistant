@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d0001f55b5c"
+name: "Master Bath Temp Sensor"
+unit_of_measurement: "%"
+device_class: battery

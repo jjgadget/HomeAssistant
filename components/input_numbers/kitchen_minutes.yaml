@@ -1,0 +1,6 @@
+minutes:
+  name: Minutes
+  initial: 00
+  min: 00
+  max: 45
+  step: 15

@@ -1,0 +1,11 @@
+platform: mqtt
+name: "Office Outlet"
+icon: mdi:power-socket-us
+command_topic: "cmnd/Office_S20/POWER"
+state_topic: "stat/Office_S20/POWER"
+availability_topic: "tele/Office_S20/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"

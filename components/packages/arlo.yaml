@@ -1,0 +1,3 @@
+arlo:
+  username: !secret arlo_name
+  password: !secret arlo_pass

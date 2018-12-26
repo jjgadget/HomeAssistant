@@ -1,0 +1,103 @@
+platform: template
+sensors:
+  yale_deadbolt_battery:
+    friendly_name: Yale Deadbolt
+    device_class: battery
+    value_template: >-
+      {%- if states.zwave.yale_deadbolt -%}
+        {{ states.zwave.yale_deadbolt.attributes.battery_level }}
+      {%- else -%}
+        n/a
+      {%- endif -%}
+    unit_of_measurement: '%'
+
+  template_deadbolt_status:
+    value_template: >-
+      {%- if is_state("sensor.yale_deadbolt_alarm_type", "19") -%}
+        {%- if is_state("sensor.yale_deadbolt_alarm_level", "0") -%}
+          Unlocked by Master Code
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "1") -%}
+          Unlocked by Joe
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "2") -%}
+          Unlocked by Ola
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "3") -%}
+          Unlocked by Arlene
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "4") -%}
+          Unlocked by Beth
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "5") -%}
+          Unlocked by JK
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "7") -%}
+          Unlocked by Amanda
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "8") -%}
+          Unlocked by Nicole
+        {%- else -%}
+          Unlocked by UNNAMED USER ({{ sensor.yale_deadbolt_alarm_level }})
+       {%- endif %}
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "27") %}
+        Auto-Relocked
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "21") %}
+        {%- if is_state("sensor.yale_deadbolt_alarm_level", "1") -%}
+          Locked by Thumb Turn
+        {%- elif is_state("sensor.yale_deadbolt_alarm_level", "2") -%}
+          Locked by Keypad
+          {%- endif %}
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "22") %}
+        Unlocked by Thumb Turn
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "0") %}
+        Hass.io Reboot
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "24") %}
+        Locked from HA
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "25") %}
+        Unlocked from HA
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "112") %}
+        Code {{ states.sensor.yale_deadbolt_alarm_level.state }} updated!
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "161") %}
+        Tampered!
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "167") %}
+        REPLACE BATTERIES NOW (4xAA)
+      {%- else -%}
+        Unknown Type {{ states.sensor.yale_deadbolt_alarm_type.state }} Level {{ states.sensor.yale_deadbolt_alarm_level.state }}
+      {%- endif %}
+    icon_template: >-
+      {%- if is_state("sensor.yale_deadbolt_alarm_type", "19") -%}
+        mdi:lock-open
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "27") %}
+        mdi:lock
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "25") %}
+        mdi:lock-open
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "22") %}
+        mdi:lock-open
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "112") %}
+        mdi:alert
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "161") %}
+        mdi:alert
+      {%- elif is_state("sensor.yale_deadbolt_alarm_type", "167") %}
+        mdi:alert
+      {%- else -%}
+        mdi:lock
+      {%- endif %}
+    friendly_name: 'Deadbolt Status'
+
+  trash_pickup_day:
+    friendly_name: Garbage
+    value_template: >-
+      {%- set pickupday = strptime(states.calendar.trash_pick_up.attributes.start_time, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d") -%}
+      {%- if pickupday == states.sensor.date.state -%}
+        Today
+      {%- elif pickupday.split("-")[2] | int -1 == states.sensor.date.state.split("-")[2] | int -%}
+        Tomorrow
+      {% else %}
+        {{as_timestamp(states.calendar.trash_pick_up.attributes.start_time) | timestamp_custom("%A %B %d",true)}}
+      {% endif %}
+
+  recycling_pickup_day:
+    friendly_name: Recycle/Compost
+    value_template: >-
+      {%- set pickupday = strptime(states.calendar.recycling_pick_up.attributes.start_time, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d") -%}
+      {%- if pickupday == states.sensor.date.state -%}
+        Today
+      {%- elif pickupday.split("-")[2] | int -1 == states.sensor.date.state.split("-")[2] | int -%}
+        Tomorrow
+      {% else %}
+        {{as_timestamp(states.calendar.recycling_pick_up.attributes.start_time) | timestamp_custom("%A %B %d",true)}}
+      {% endif %}

@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d00020b7de0"
+name: "Back Door"
+unit_of_measurement: "%"
+device_class: battery

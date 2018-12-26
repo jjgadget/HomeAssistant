@@ -1,0 +1,6 @@
+platform: mqtt
+name: "Laundry Status"
+device_class: connectivity
+state_topic: "laundry/status"
+payload_on: "online"
+payload_off: "offline"

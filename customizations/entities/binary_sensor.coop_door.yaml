@@ -1,0 +1,2 @@
+binary_sensor.coop_door:
+  device_class: door

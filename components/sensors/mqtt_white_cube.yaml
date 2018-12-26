@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d0001050e84"
+name: "White Cube"
+unit_of_measurement: "%"
+device_class: battery

@@ -1,0 +1,3 @@
+google:
+  client_id: !secret hacal_id
+  client_secret: !secret hacal_secret

@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Guest Mode"
+icon: mdi:home
+command_topic: "switch/guest/mode"
+state_topic: "switch/guest/mode"

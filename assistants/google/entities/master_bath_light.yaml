@@ -1,0 +1,5 @@
+light.master_bath_light:
+  name: Bathroom Light
+  aliases:
+    - Master Bath Light
+    - master bathroom light

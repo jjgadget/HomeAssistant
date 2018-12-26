@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Dryer"
+device_class: vibration
+state_topic: "laundry/binary_sensor/dryer/state"
+availability_topic: "laundry/status"

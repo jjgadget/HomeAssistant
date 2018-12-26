@@ -1,0 +1,5 @@
+platform: transmission
+host: 192.168.1.4
+port: 9091
+username: !secret trans_user
+password: !secret trans_pass

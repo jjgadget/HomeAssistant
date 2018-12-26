@@ -1,0 +1,3 @@
+sensor.transmission_down_speed:
+  friendly_name: Download Speed
+  icon: mdi:download

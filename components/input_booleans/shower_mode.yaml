@@ -1,0 +1,4 @@
+shower_mode:
+  name: Shower Mode
+  initial: off
+  icon: mdi:shower

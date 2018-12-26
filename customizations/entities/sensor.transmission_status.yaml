@@ -1,0 +1,2 @@
+sensor.transmission_status:
+  friendly_name: Up/Down Status

@@ -1,0 +1,3 @@
+sensor.transmission_up_speed:
+  friendly_name: Upload Speed
+  icon: mdi:upload

@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "zanzito/Nexus7/battery_level"
+name: "Nexus 7 Battery"
+unit_of_measurement: "%"
+device_class: battery

@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d000205b1a0"
+name: "Living Room Window"
+unit_of_measurement: "%"
+device_class: battery

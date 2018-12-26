@@ -1,0 +1,3 @@
+sensor.transmission_active_torrents:
+  friendly_name: Active Torrents
+  icon: mdi:counter

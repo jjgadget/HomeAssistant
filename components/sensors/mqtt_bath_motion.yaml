@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d0001a8cf3f"
+name: "Bathroom Motion Sensor"
+unit_of_measurement: "%"
+device_class: battery

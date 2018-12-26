@@ -1,0 +1,6 @@
+'open_sesame':
+  alias: Open Sesame
+  sequence:
+  - data:
+      entity_id: lock.yale_deadbolt
+    service: lock.unlock

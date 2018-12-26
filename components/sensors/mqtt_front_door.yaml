@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d00023947e6"
+name: "Front Door"
+unit_of_measurement: "%"
+device_class: battery

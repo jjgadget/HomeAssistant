@@ -1,0 +1,11 @@
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+  sensors:
+    monitored_conditions:
+      - 'humidity'
+      - 'hvac_state'
+      - 'operation_mode'
+  binary_sensors:
+    monitored_conditions:
+      - 'has_leaf'

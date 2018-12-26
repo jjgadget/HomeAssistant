@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "xiaomi/battery/158d00023945e7"
+name: "Garage Door"
+unit_of_measurement: "%"
+device_class: battery
