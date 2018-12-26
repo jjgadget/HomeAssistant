@@ -369,8 +369,8 @@ views:
           - entity: zwave.kitchen_light
           - entity: zwave.master_bath_fan
           - entity: zwave.master_bath_light
-          - entity: zwave.usb_adapter
           - entity: zwave.yale_deadbolt
+          - entity: zwave.usb_adapter
         theme: default
         show_header_toggle: false
 
