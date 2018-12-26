@@ -3,15 +3,398 @@ name: Home Assistant
 views:
 
   - id: 0
+    name: System
+    icon: mdi:home-assistant
+    cards:
+
+      - type: entities
+        id: HA Version
+        title: System
+        entities:
+          - entity: sensor.ha_version_docker_stable
+          - entity: sensor.system_uptime
+        show_header_toggle: false
+        theme: default
+
+      - type: glance
+        id: Occupancy
+        title: Occupancy
+        entities:
+          - entity: binary_sensor.joe
+          - entity: binary_sensor.ola
+          - entity: switch.guest_mode
+        show_name: true
+        show_state: true
+        theme: default
+
+      - type: entities
+        id: Presense
+        title: Presense Sensors
+        entities:
+          - entity: device_tracker.pixeljoe_bt
+          - entity: device_tracker.pixeljoe_wifi
+          - entity: binary_sensor.chevy_spark_ev
+          - entity: device_tracker.pixelola_bt
+          - entity: device_tracker.pixelola_wifi
+          - entity: binary_sensor.subaru_crosstrek
+        theme: default
+        show_header_toggle: false
+
+      - type: entities
+        id: HVAC
+        title: HVAC
+        entities:
+          - entity: climate.nest
+          - entity: sensor.living_room_thermostat_nest_humidity
+          - entity: sensor.living_room_thermostat_nest_hvac_state
+          - entity: sensor.living_room_thermostat_nest_operation_mode
+          - entity: binary_sensor.living_room_thermostat_nest_has_leaf
+        theme: default
+        show_header_toggle: false
+
+      - type: entities
+        id: Calendar
+        title: Google Calendar
+        entities:
+          - entity: sensor.recycling_pickup_day
+          - entity: sensor.trash_pickup_day
+        theme: default
+        show_header_toggle: false
+
+      - id: Map
+        type: entity-filter
+        entities:
+          - entity: zone.home
+          - entity: device_tracker.2018_subaru_crosstrek
+          - entity: device_tracker.joe_cell
+        state_filter:
+          - not_home
+          - zoning
+        card:
+          type: map
+
+
+  - id: 1
     name: Downstairs
     icon: mdi:sofa
     cards:
+
+      - type: entities
+        id: Front Entrance
+        title: Front Entrance
+        show_header_toggle: false
+        entities:
+          - entity: sensor.template_deadbolt_status
+          - entity: lock.yale_deadbolt
+          - entity: binary_sensor.front_door
+          - entity: switch.front_porch_light
+        theme: default
+
+      - type: entities
+        id: Living Room
+        title: Living Room
+        show_header_toggle: false
+        entities:
+          - entity: media_player.kodi
+          - entity: media_player.living_room_tv
+          - entity: remote.harmony_hub
+          - entity: input_select.harmony_remote
+          - entity: binary_sensor.living_room_window
+          - entity: light.living_room
+          - entity: switch.fireplace
+        theme: default
+
+      - type: entities
+        id: Kitchen
+        title: Kitchen
+        show_header_toggle: false
+        entities:
+          - entity: media_player.kitchen_speaker
+          - entity: binary_sensor.kitchen_motion
+          - entity: switch.kitchen_light
+          - type: divider
+          - entity: switch.kitchen_outlet
+          - entity: input_number.slider1
+          - entity: input_number.slider2
+        theme: default
+
+      - type: entities
+        id: Back Porch
+        title: Back Porch
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.back_door
+          - entity: switch.back_porch_light
+          - entity: switch.back_porch_outlet
+        theme: default
+
       - type: entities
         id: Laundry Room
         title: Laundry Room
         show_header_toggle: false
         entities:
+          - entity: binary_sensor.garage_door
           - entity: binary_sensor.laundry_status
           - entity: binary_sensor.washer
           - entity: binary_sensor.dryer
         theme: default
+
+      - type: entities
+        id: Chicken Coop
+        title: Chicken Coop
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.coop_door
+        theme: default
+
+      - type: entities
+        id: Vacuum
+        title: Vacuum
+        show_header_toggle: false
+        entities:
+          - entity: vacuum.xiaomi_vacuum_cleaner
+        theme: default
+
+
+  - id: 2
+    name: Upstairs
+    icon: mdi:hotel
+    cards:
+
+      - type: entities
+        id: Master Bedroom
+        title: Master Bedroom
+        show_header_toggle: false
+        entities:
+          - entity: media_player.bedroom_speaker
+          - entity: light.master_bedroom_lamp
+        theme: default
+
+      - type: entities
+        id: Master Bathroom
+        title: Master Bathroom
+        show_header_toggle: false
+        entities:
+          - entity: sensor.master_bath_temp
+          - entity: sensor.master_bath_humidity
+          - entity: sensor.master_bath_pressure
+          - entity: binary_sensor.master_bath_motion
+          - entity: binary_sensor.shower
+          - entity: light.master_bath_light
+          - entity: switch.master_bath_fan
+        theme: default
+
+      - type: entities
+        id: Bedroom
+        title: Bedroom
+        show_header_toggle: false
+        entities:
+          - entity: media_player.guest_bedroom_speaker
+          - entity: light.bedroom_lights
+        theme: default
+
+      - type: entities
+        id: Bathroom
+        title: Bathroom
+        show_header_toggle: false
+        entities:
+          - entity: sensor.guest_bath_temp
+          - entity: sensor.guest_bath_humidity
+          - entity: sensor.guest_bath_pressure
+          - entity: binary_sensor.bath_motion
+          - entity: input_boolean.shower_mode2
+          - entity: light.bath_light
+          - entity: switch.bath_fan
+        theme: default
+
+      - type: entities
+        id: Hallway
+        title: Hallway
+        show_header_toggle: false
+        entities:
+          - entity: sensor.xiaomi_hub_lumens
+          - entity: light.xiaomi_hub
+        theme: default
+
+      - type: entities
+        id: Joe's Office
+        title: Joe's Office
+        show_header_toggle: false
+        entities:
+          - entity: media_player.office_tv
+        theme: default
+
+      - type: entities
+        id: Ola's Office
+        title: Ola's Office
+        show_header_toggle: false
+        entities:
+          - entity: switch.office_outlet
+        theme: default
+
+
+  - id: 3
+    name: Media
+    icon: mdi:cast
+    cards:
+
+      - id: Kodi
+        type: media-control
+        entity: media_player.kodi
+
+      - id: Living Room Chromecast
+        type: media-control
+        entity: media_player.living_room_tv
+
+      - id: Office Chromecast
+        type: media-control
+        entity: media_player.office_tv
+
+      - id: Kitchen Google Home
+        type: media-control
+        entity: media_player.kitchen_speaker
+
+      - id: Master Bedroom Google Home
+        type: media-control
+        entity: media_player.bedroom_speaker
+
+      - id: Bedroom Google Home
+        type: media-control
+        entity: media_player.guest_bedroom_speaker
+
+
+  - id: 4
+    name: Security
+    icon: mdi:cctv
+    cards:
+
+      - id: Front Yard Camera
+        type: picture-entity
+        entity: camera.camera__driveway
+
+      - type: entities
+        id: Front Yard Camera Sensors
+        entities:
+          - entity: sensor.battery_level_camera__driveway
+          - entity: sensor.captured_today_camera__driveway
+          - entity: sensor.last_camera__driveway
+        theme: default
+        show_header_toggle: false
+
+      - id: Back Yard Camera
+        type: picture-entity
+        entity: camera.camera__backyard
+
+      - type: entities
+        id: Back Yard Camera Sensors
+        entities:
+          - entity: sensor.battery_level_camera__backyard
+          - entity: sensor.captured_today_camera__backyard
+          - entity: sensor.last_camera__backyard
+        show_header_toggle: false
+        theme: default
+
+
+  - id: 5
+    name: Servers
+    icon: mdi:server
+    cards:
+
+      - type: entities
+        id: Docker
+        title: Docker
+        show_header_toggle: false
+        entities:
+          - entity: switch.docker_amazondash
+          - entity: switch.docker_dockercomposeui
+          - entity: switch.docker_mqtt
+          - entity: switch.docker_nodered
+          - entity: switch.docker_portainer
+          - entity: switch.docker_radarr
+          - entity: switch.docker_sickgear
+          - entity: switch.docker_tasmoadmin
+          - entity: switch.docker_transmission
+          - entity: switch.docker_watchtower
+        theme: default
+
+      - type: entities
+        id: NAS
+        title: Synology
+        entities:
+          - entity: sensor.processor_use
+          - entity: sensor.memory_use
+          - entity: sensor.memory_use_percent
+          - entity: sensor.memory_free
+          - entity: sensor.packets_out_eth0
+          - entity: sensor.packets_in_eth0
+          - entity: sensor.since_last_boot
+        show_header_toggle: false
+        theme: default
+
+      - type: entities
+        id: PiHole
+        title: Pi-hole
+        entities:
+          - entity: sensor.pihole_ads_blocked_today
+          - entity: sensor.pihole_dns_queries_today
+          - entity: sensor.pihole_ads_percentage_blocked_today
+        theme: default
+        show_header_toggle: false
+
+      - type: entities
+        id: Torrent
+        title: Transmission
+        show_header_toggle: false
+        entities:
+          - entity: sensor.transmission_active_torrents
+          - entity: sensor.transmission_status
+          - entity: sensor.transmission_up_speed
+          - entity: sensor.transmission_down_speed
+          - entity: switch.transmission_turtle_mode
+        theme: default
+
+      - type: entities
+        id: ZWave
+        title: Z-Wave
+        entities:
+          - entity: zwave.back_porch_light
+          - entity: zwave.back_porch_outlet
+          - entity: zwave.bath_fan
+          - entity: zwave.bath_light
+          - entity: zwave.fireplace
+          - entity: zwave.front_porch_light
+          - entity: zwave.kitchen_light
+          - entity: zwave.master_bath_fan
+          - entity: zwave.master_bath_light
+          - entity: zwave.sigma_designs_uzb_zwave_usb_adapter
+          - entity: zwave.yale_deadbolt
+        theme: default
+        show_header_toggle: false
+
+
+  - id: 6
+    name: Batteries
+    icon: mdi:battery
+    cards:
+
+      - type: entities
+        id: Batteries
+        title: Battery Levels
+        entities:
+          - entity: sensor.pixel_battery
+          - entity: sensor.nexus_7_battery
+          - entity: sensor.back_door
+          - entity: sensor.bathroom_motion_sensor
+          - entity: sensor.bathroom_temp_sensor
+          - entity: sensor.battery_level_camera__backyard
+          - entity: sensor.battery_level_camera__driveway
+          - entity: sensor.doorbell
+          - entity: sensor.front_door
+          - entity: sensor.garage_door
+          - entity: sensor.kitchen_motion_sensor
+          - entity: sensor.living_room_window
+          - entity: sensor.master_bath_temp_sensor
+          - entity: sensor.white_cube
+          - entity: sensor.yale_deadbolt_battery
+        theme: default
+        show_header_toggle: false
