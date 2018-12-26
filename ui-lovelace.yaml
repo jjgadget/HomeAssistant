@@ -11,7 +11,8 @@ views:
         id: HA Version
         title: System
         entities:
-          - entity: sensor.ha_version_docker_stable
+          - entity: sensor.current_version
+          - entity: sensor.latest_version
           - entity: sensor.system_uptime
         show_header_toggle: false
         theme: default
@@ -33,7 +34,7 @@ views:
         entities:
           - entity: device_tracker.pixeljoe_bt
           - entity: device_tracker.pixeljoe_wifi
-          - entity: binary_sensor.chevy_spark_ev
+          - entity: binary_sensor.kia_soul
           - entity: device_tracker.pixelola_bt
           - entity: device_tracker.pixelola_wifi
           - entity: binary_sensor.subaru_crosstrek
@@ -114,8 +115,8 @@ views:
           - entity: switch.kitchen_light
           - type: divider
           - entity: switch.kitchen_outlet
-          - entity: input_number.slider1
-          - entity: input_number.slider2
+          - entity: input_number.hours
+          - entity: input_number.minutes
         theme: default
 
       - type: entities
@@ -198,11 +199,11 @@ views:
         title: Bathroom
         show_header_toggle: false
         entities:
-          - entity: sensor.guest_bath_temp
-          - entity: sensor.guest_bath_humidity
-          - entity: sensor.guest_bath_pressure
+          - entity: sensor.bath_temp
+          - entity: sensor.bath_humidity
+          - entity: sensor.bath_pressure
           - entity: binary_sensor.bath_motion
-          - entity: input_boolean.shower_mode2
+          - entity: input_boolean.shower_mode
           - entity: light.bath_light
           - entity: switch.bath_fan
         theme: default
@@ -305,16 +306,16 @@ views:
         title: Docker
         show_header_toggle: false
         entities:
-          - entity: switch.docker_amazondash
-          - entity: switch.docker_dockercomposeui
-          - entity: switch.docker_mqtt
-          - entity: switch.docker_nodered
-          - entity: switch.docker_portainer
-          - entity: switch.docker_radarr
-          - entity: switch.docker_sickgear
-          - entity: switch.docker_tasmoadmin
-          - entity: switch.docker_transmission
-          - entity: switch.docker_watchtower
+          - entity: switch.ha_dockermon_amazondash
+          - entity: switch.ha_dockermon_dockercomposeui
+          - entity: switch.ha_dockermon_mqtt
+          - entity: switch.ha_dockermon_nodered
+          - entity: switch.ha_dockermon_ouroboros
+          - entity: switch.ha_dockermon_portainer
+          - entity: switch.ha_dockermon_radarr
+          - entity: switch.ha_dockermon_sickgear
+          - entity: switch.ha_dockermon_tasmoadmin
+          - entity: switch.ha_dockermon_transmission
         theme: default
 
       - type: entities
@@ -327,7 +328,6 @@ views:
           - entity: sensor.memory_free
           - entity: sensor.packets_out_eth0
           - entity: sensor.packets_in_eth0
-          - entity: sensor.since_last_boot
         show_header_toggle: false
         theme: default
 
@@ -335,9 +335,12 @@ views:
         id: PiHole
         title: Pi-hole
         entities:
-          - entity: sensor.pihole_ads_blocked_today
           - entity: sensor.pihole_dns_queries_today
+          - entity: sensor.pihole_dns_queries_cached
+          - entity: sensor.pihole_dns_queries_forwarded
+          - entity: sensor.pihole_ads_blocked_today
           - entity: sensor.pihole_ads_percentage_blocked_today
+          - entity: sensor.pihole_domains_blocked
         theme: default
         show_header_toggle: false
 
@@ -366,7 +369,7 @@ views:
           - entity: zwave.kitchen_light
           - entity: zwave.master_bath_fan
           - entity: zwave.master_bath_light
-          - entity: zwave.sigma_designs_uzb_zwave_usb_adapter
+          - entity: zwave.usb_adapter
           - entity: zwave.yale_deadbolt
         theme: default
         show_header_toggle: false
@@ -388,7 +391,7 @@ views:
           - entity: sensor.bathroom_temp_sensor
           - entity: sensor.battery_level_camera__backyard
           - entity: sensor.battery_level_camera__driveway
-          - entity: sensor.doorbell
+          - entity: sensor.coop_door
           - entity: sensor.front_door
           - entity: sensor.garage_door
           - entity: sensor.kitchen_motion_sensor
