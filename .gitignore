@@ -7,7 +7,7 @@
 .cloud/
 .automatic/
 deps/
-./tts/
+./tts/*
 
 secrets.yaml
 google_calendars.yaml
