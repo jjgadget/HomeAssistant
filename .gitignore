@@ -7,11 +7,7 @@
 .cloud/
 .automatic/
 deps/
-<<<<<<< HEAD
 ./tts/*.mp3
-=======
-./tts/*
->>>>>>> b131d6af54f2f1263a44904a4b5e9fc3c5ca1de8
 
 secrets.yaml
 google_calendars.yaml
