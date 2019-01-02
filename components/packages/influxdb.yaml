@@ -1,0 +1,4 @@
+influxdb:
+  host: !secret host_ip
+  username: !secret influx_user
+  password: !secret influx_pass
