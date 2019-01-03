@@ -1,4 +1,4 @@
 influxdb:
-  host: !secret host_ip
+  host: 192.168.1.4
   username: !secret influx_user
   password: !secret influx_pass
