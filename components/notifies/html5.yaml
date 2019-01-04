@@ -1,0 +1,4 @@
+platform: html5
+name: Push Notification
+gcm_api_key: !secret google_api
+gcm_sender_id: !secret google_sender
