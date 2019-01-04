@@ -4,7 +4,6 @@ port: 8126
 containers:
   - amazon-dash
   - docker-compose-ui
-  - influxdb
   - mqtt
   - node-red
   - ouroboros

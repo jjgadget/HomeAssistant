@@ -308,7 +308,6 @@ views:
         entities:
           - entity: switch.ha_dockermon_amazondash
           - entity: switch.ha_dockermon_dockercomposeui
-          - entity: switch.ha_dockermon_influxdb
           - entity: switch.ha_dockermon_mqtt
           - entity: switch.ha_dockermon_nodered
           - entity: switch.ha_dockermon_ouroboros

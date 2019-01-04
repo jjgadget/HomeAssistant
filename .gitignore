@@ -8,6 +8,7 @@
 .automatic/
 deps/
 /tts/*.mp3
+/www/*.html
 
 secrets.yaml
 google_calendars.yaml
@@ -15,6 +16,7 @@ known_devices.yaml
 
 nest.conf
 harmony_harmony_hub.conf
+html5_push_registrations.conf
 
 home-assistant_v2.db
 *.db*
