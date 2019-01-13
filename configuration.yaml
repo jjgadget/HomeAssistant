@@ -5,8 +5,5 @@ homeassistant:
   elevation: 54
   unit_system: imperial
   time_zone: America/Los_Angeles
-  auth_providers:
-   - type: homeassistant
-   - type: legacy_api_password
 
   packages: !include_dir_named components/packages
