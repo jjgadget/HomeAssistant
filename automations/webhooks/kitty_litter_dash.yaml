@@ -1,0 +1,10 @@
+id: 'Kitty_Litter_Dash'
+alias: Master Bedroom Lamp
+trigger:
+- platform: webhook
+  webhook_id: Kitty_Litter_Dash
+condition: []
+action:
+- data:
+    entity_id: light.master_bedroom_lamp
+  service: light.toggle
