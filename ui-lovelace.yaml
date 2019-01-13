@@ -32,10 +32,10 @@ views:
         id: Presense
         title: Presense Sensors
         entities:
-          - entity: device_tracker.pixeljoe_bt
+          - entity: device_tracker.pixel_joe_bt
           - entity: device_tracker.pixeljoe_wifi
           - entity: binary_sensor.kia_soul
-          - entity: device_tracker.pixelola_bt
+          - entity: device_tracker.pixel_ola_bt
           - entity: device_tracker.pixelola_wifi
           - entity: binary_sensor.subaru_crosstrek
         theme: default
@@ -66,7 +66,7 @@ views:
         type: entity-filter
         entities:
           - entity: zone.home
-          - entity: device_tracker.2018_subaru_crosstrek
+          - entity: device_tracker.2018_kia_soul
           - entity: device_tracker.joe_cell
         state_filter:
           - not_home
@@ -271,27 +271,27 @@ views:
 
       - id: Front Yard Camera
         type: picture-entity
-        entity: camera.camera__driveway
+        entity: camera.camera_driveway
 
       - type: entities
         id: Front Yard Camera Sensors
         entities:
-          - entity: sensor.battery_level_camera__driveway
-          - entity: sensor.captured_today_camera__driveway
-          - entity: sensor.last_camera__driveway
+          - entity: sensor.battery_level_camera_driveway
+          - entity: sensor.captured_today_camera_driveway
+          - entity: sensor.last_camera_driveway
         theme: default
         show_header_toggle: false
 
       - id: Back Yard Camera
         type: picture-entity
-        entity: camera.camera__backyard
+        entity: camera.camera_backyard
 
       - type: entities
         id: Back Yard Camera Sensors
         entities:
-          - entity: sensor.battery_level_camera__backyard
-          - entity: sensor.captured_today_camera__backyard
-          - entity: sensor.last_camera__backyard
+          - entity: sensor.battery_level_camera_backyard
+          - entity: sensor.captured_today_camera_backyard
+          - entity: sensor.last_camera_backyard
         show_header_toggle: false
         theme: default
 
@@ -306,10 +306,10 @@ views:
         title: Docker
         show_header_toggle: false
         entities:
-          - entity: switch.ha_dockermon_amazondash
-          - entity: switch.ha_dockermon_dockercomposeui
+          - entity: switch.ha_dockermon_amazon_dash
+          - entity: switch.ha_dockermon_docker_compose_ui
           - entity: switch.ha_dockermon_mqtt
-          - entity: switch.ha_dockermon_nodered
+          - entity: switch.ha_dockermon_node_red
           - entity: switch.ha_dockermon_ouroboros
           - entity: switch.ha_dockermon_portainer
           - entity: switch.ha_dockermon_radarr
@@ -335,12 +335,12 @@ views:
         id: PiHole
         title: Pi-hole
         entities:
-          - entity: sensor.pihole_dns_queries_today
-          - entity: sensor.pihole_dns_queries_cached
-          - entity: sensor.pihole_dns_queries_forwarded
-          - entity: sensor.pihole_ads_blocked_today
-          - entity: sensor.pihole_ads_percentage_blocked_today
-          - entity: sensor.pihole_domains_blocked
+          - entity: sensor.pi_hole_dns_queries_today
+          - entity: sensor.pi_hole_dns_queries_cached
+          - entity: sensor.pi_hole_dns_queries_forwarded
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_domains_blocked
         theme: default
         show_header_toggle: false
 
@@ -389,8 +389,8 @@ views:
           - entity: sensor.back_door
           - entity: sensor.bathroom_motion_sensor
           - entity: sensor.bathroom_temp_sensor
-          - entity: sensor.battery_level_camera__backyard
-          - entity: sensor.battery_level_camera__driveway
+          - entity: sensor.battery_level_camera_backyard
+          - entity: sensor.battery_level_camera_driveway
           - entity: sensor.coop_door
           - entity: sensor.front_door
           - entity: sensor.garage_door
