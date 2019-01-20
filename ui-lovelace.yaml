@@ -32,8 +32,8 @@ views:
         id: Presense
         title: Presense Sensors
         entities:
-          - entity: device_tracker.pixel_joe_bt
-          - entity: device_tracker.pixeljoe_wifi
+          - entity: device_tracker.nokia7_bt
+          - entity: device_tracker.nokia7_wifi
           - entity: binary_sensor.kia_soul
           - entity: device_tracker.pixel_ola_bt
           - entity: device_tracker.pixelola_wifi
@@ -55,12 +55,22 @@ views:
 
       - type: entities
         id: Calendar
-        title: Google Calendar
+        title: Reminders
         entities:
           - entity: sensor.recycling_pickup_day
           - entity: sensor.trash_pickup_day
+          - entity: input_boolean.vitamins
         theme: default
         show_header_toggle: false
+
+      - type: entities
+        id: twitch
+        title: Twitch
+        entities:
+          - sensor.frenck
+          - sensor.drzzs
+        show_header_toggle: false
+        theme: default
 
       - id: Map
         type: entity-filter
@@ -384,7 +394,7 @@ views:
         id: Batteries
         title: Battery Levels
         entities:
-          - entity: sensor.pixel_battery
+          - entity: sensor.nokia_battery
           - entity: sensor.nexus_7_battery
           - entity: sensor.back_door
           - entity: sensor.bathroom_motion_sensor
