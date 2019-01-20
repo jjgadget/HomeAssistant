@@ -1,0 +1,4 @@
+vitamins:
+  name: Vitamin Reminder
+  initial: off
+  icon: mdi:pill
