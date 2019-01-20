@@ -1,5 +1,0 @@
-platform: mqtt
-state_topic: "zanzito/pixel/battery_level"
-name: "Pixel Battery"
-unit_of_measurement: "%"
-device_class: battery

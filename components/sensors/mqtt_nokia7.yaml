@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "zanzito/nokia7/battery_level"
+name: "Nokia Battery"
+unit_of_measurement: "%"
+device_class: battery
