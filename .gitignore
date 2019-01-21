@@ -9,6 +9,7 @@
 deps/
 /tts/*.mp3
 /www/*.html
+/www/*.png
 
 secrets.yaml
 google_calendars.yaml
