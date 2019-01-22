@@ -4,7 +4,11 @@ port: 8126
 containers:
   - amazon-dash
   - docker-compose-ui
+  - grafana
+  - influxdb
+  - mariadb
   - mqtt
+  - nginx-proxy-manager
   - node-red
   - ouroboros
   - portainer
