@@ -2,13 +2,11 @@ name: Home Assistant
 
 views:
 
-  - id: 0
-    name: System
+  - name: System
     icon: mdi:home-assistant
     cards:
 
       - type: entities
-        id: HA Version
         title: System
         entities:
           - entity: sensor.current_version
@@ -18,7 +16,6 @@ views:
         theme: default
 
       - type: glance
-        id: Occupancy
         title: Occupancy
         entities:
           - entity: binary_sensor.joe
@@ -29,7 +26,6 @@ views:
         theme: default
 
       - type: entities
-        id: Presense
         title: Presense Sensors
         entities:
           - entity: device_tracker.nokia7_bt
@@ -41,11 +37,13 @@ views:
         theme: default
         show_header_toggle: false
 
+      - type: thermostat
+        name: Nest
+        entity: climate.nest
+
       - type: entities
-        id: HVAC
         title: HVAC
         entities:
-          - entity: climate.nest
           - entity: sensor.living_room_thermostat_nest_humidity
           - entity: sensor.living_room_thermostat_nest_hvac_state
           - entity: sensor.living_room_thermostat_nest_operation_mode
@@ -54,7 +52,6 @@ views:
         show_header_toggle: false
 
       - type: entities
-        id: Calendar
         title: Reminders
         entities:
           - entity: sensor.recycling_pickup_day
@@ -64,7 +61,6 @@ views:
         show_header_toggle: false
 
       - type: entities
-        id: twitch
         title: Twitch
         entities:
           - sensor.frenck
@@ -72,8 +68,7 @@ views:
         show_header_toggle: false
         theme: default
 
-      - id: Map
-        type: entity-filter
+      - type: entity-filter
         entities:
           - entity: zone.home
           - entity: device_tracker.2018_kia_soul
@@ -85,13 +80,11 @@ views:
           type: map
 
 
-  - id: 1
-    name: Downstairs
+  - name: Downstairs
     icon: mdi:sofa
     cards:
 
       - type: entities
-        id: Front Entrance
         title: Front Entrance
         show_header_toggle: false
         entities:
@@ -102,7 +95,6 @@ views:
         theme: default
 
       - type: entities
-        id: Living Room
         title: Living Room
         show_header_toggle: false
         entities:
@@ -116,7 +108,6 @@ views:
         theme: default
 
       - type: entities
-        id: Kitchen
         title: Kitchen
         show_header_toggle: false
         entities:
@@ -130,7 +121,6 @@ views:
         theme: default
 
       - type: entities
-        id: Back Porch
         title: Back Porch
         show_header_toggle: false
         entities:
@@ -140,7 +130,6 @@ views:
         theme: default
 
       - type: entities
-        id: Laundry Room
         title: Laundry Room
         show_header_toggle: false
         entities:
@@ -151,7 +140,6 @@ views:
         theme: default
 
       - type: entities
-        id: Chicken Coop
         title: Chicken Coop
         show_header_toggle: false
         entities:
@@ -159,7 +147,6 @@ views:
         theme: default
 
       - type: entities
-        id: Vacuum
         title: Vacuum
         show_header_toggle: false
         entities:
@@ -167,13 +154,11 @@ views:
         theme: default
 
 
-  - id: 2
-    name: Upstairs
+  - name: Upstairs
     icon: mdi:hotel
     cards:
 
       - type: entities
-        id: Master Bedroom
         title: Master Bedroom
         show_header_toggle: false
         entities:
@@ -182,7 +167,6 @@ views:
         theme: default
 
       - type: entities
-        id: Master Bathroom
         title: Master Bathroom
         show_header_toggle: false
         entities:
@@ -196,7 +180,6 @@ views:
         theme: default
 
       - type: entities
-        id: Bedroom
         title: Bedroom
         show_header_toggle: false
         entities:
@@ -205,7 +188,6 @@ views:
         theme: default
 
       - type: entities
-        id: Bathroom
         title: Bathroom
         show_header_toggle: false
         entities:
@@ -219,7 +201,6 @@ views:
         theme: default
 
       - type: entities
-        id: Hallway
         title: Hallway
         show_header_toggle: false
         entities:
@@ -228,7 +209,6 @@ views:
         theme: default
 
       - type: entities
-        id: Joe's Office
         title: Joe's Office
         show_header_toggle: false
         entities:
@@ -236,7 +216,6 @@ views:
         theme: default
 
       - type: entities
-        id: Ola's Office
         title: Ola's Office
         show_header_toggle: false
         entities:
@@ -244,47 +223,37 @@ views:
         theme: default
 
 
-  - id: 3
-    name: Media
+  - name: Media
     icon: mdi:cast
     cards:
 
-      - id: Kodi
-        type: media-control
+      - type: media-control
         entity: media_player.kodi
 
-      - id: Living Room Chromecast
-        type: media-control
+      - type: media-control
         entity: media_player.living_room_tv
 
-      - id: Office Chromecast
-        type: media-control
+      - type: media-control
         entity: media_player.office_tv
 
-      - id: Kitchen Google Home
-        type: media-control
+      - type: media-control
         entity: media_player.kitchen_speaker
 
-      - id: Master Bedroom Google Home
-        type: media-control
+      - type: media-control
         entity: media_player.bedroom_speaker
 
-      - id: Bedroom Google Home
-        type: media-control
+      - type: media-control
         entity: media_player.guest_bedroom_speaker
 
 
-  - id: 4
-    name: Security
+  - name: Security
     icon: mdi:cctv
     cards:
 
-      - id: Front Yard Camera
-        type: picture-entity
+      - type: picture-entity
         entity: camera.camera_driveway
 
       - type: entities
-        id: Front Yard Camera Sensors
         entities:
           - entity: sensor.battery_level_camera_driveway
           - entity: sensor.captured_today_camera_driveway
@@ -292,12 +261,10 @@ views:
         theme: default
         show_header_toggle: false
 
-      - id: Back Yard Camera
-        type: picture-entity
+      - type: picture-entity
         entity: camera.camera_backyard
 
       - type: entities
-        id: Back Yard Camera Sensors
         entities:
           - entity: sensor.battery_level_camera_backyard
           - entity: sensor.captured_today_camera_backyard
@@ -306,13 +273,11 @@ views:
         theme: default
 
 
-  - id: 5
-    name: Servers
+  - name: Servers
     icon: mdi:server
     cards:
 
       - type: entities
-        id: Docker
         title: Docker
         show_header_toggle: false
         entities:
@@ -329,7 +294,6 @@ views:
         theme: default
 
       - type: entities
-        id: NAS
         title: Synology
         entities:
           - entity: sensor.processor_use
@@ -342,7 +306,6 @@ views:
         theme: default
 
       - type: entities
-        id: PiHole
         title: Pi-hole
         entities:
           - entity: sensor.pi_hole_dns_queries_today
@@ -355,7 +318,6 @@ views:
         show_header_toggle: false
 
       - type: entities
-        id: Torrent
         title: Transmission
         show_header_toggle: false
         entities:
@@ -367,7 +329,6 @@ views:
         theme: default
 
       - type: entities
-        id: ZWave
         title: Z-Wave
         entities:
           - entity: zwave.back_porch_light
@@ -385,13 +346,11 @@ views:
         show_header_toggle: false
 
 
-  - id: 6
-    name: Batteries
+  - name: Batteries
     icon: mdi:battery
     cards:
 
       - type: entities
-        id: Batteries
         title: Battery Levels
         entities:
           - entity: sensor.nokia_battery
