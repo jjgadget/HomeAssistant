@@ -1,3 +1,0 @@
-platform: mqtt
-name: "Subaru Crosstrek"
-state_topic: "homeassistant/binary_sensor/CarPresenceOla/state"
