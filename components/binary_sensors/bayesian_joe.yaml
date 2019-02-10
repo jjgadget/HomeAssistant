@@ -19,8 +19,3 @@ observations:
     prob_given_false: 0.1
     platform: 'state'
     to_state: 'on'
-  - entity_id: 'device_tracker.joe_cell'
-    prob_given_true: 0.5
-    prob_given_false: 0.1
-    platform: 'state'
-    to_state: 'home'
