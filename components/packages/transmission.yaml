@@ -1,0 +1,10 @@
+transmission:
+  host: 192.168.1.4
+  username: !secret trans_user
+  password: !secret trans_pass
+  turtle_mode: true
+  monitored_conditions:
+    - 'current_status'
+    - 'download_speed'
+    - 'upload_speed'
+    - 'active_torrents'
