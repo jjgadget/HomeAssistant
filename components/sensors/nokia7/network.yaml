@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "zanzito/nokia7/device_info"
+name: "Network"
+value_template: "{{ value_json.current_operator }}"
+icon: mdi:cellphone-basic

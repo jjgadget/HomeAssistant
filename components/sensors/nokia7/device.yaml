@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "zanzito/nokia7/device_info"
+name: "Device Info"
+value_template: "{{ value_json.device_info}}"
+icon: mdi:cellphone-settings-variant

@@ -1,0 +1,7 @@
+platform: mqtt
+state_topic: "zanzito/nokia7/device_info"
+name: "Charging Status"
+value_template: "{{ value_json.battery_charging }}"
+payload_on: true
+payload_off: false
+device_class: plug
